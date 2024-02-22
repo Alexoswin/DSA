@@ -8,14 +8,15 @@ public class tower{
 
             Tower(n-1, src, dest, helper);
             System.out.println("transfer disk no"+ n + " from " + src + " to " + dest);
-            Tower(n-1, dest, src, helper);
+            Tower(n-1, helper, src, dest);
         }
 
     public static void main(String[] args) {
         System.out.println("Tower of hanoi");
-        Tower(2, "S", "H", "D");
+        Tower(3, "S", "H", "D");
+
+
+
         
-
-
     }
 }  
