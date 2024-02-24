@@ -13,10 +13,7 @@ public class tower{
 
     public static void main(String[] args) {
         System.out.println("Tower of hanoi");
-        Tower(3, "S", "H", "D");
-
-
-
+        Tower(5, "S", "H", "D");
         
     }
 }  
