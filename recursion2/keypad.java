@@ -27,6 +27,6 @@ public class Keypad{
 
         System.out.println(" keypad combinations ");
 
-            calculate("23", 0, "");
+            calculate("24", 0, "");
     }
 }
