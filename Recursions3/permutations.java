@@ -1,25 +1,23 @@
 public class permutations {
 
-    public static void calculate(String str , string new){
+    public static void calculate(String str, String prefix) {
 
-        
-        for(int i = 0 ; i < str.length(); i++){
-
-           char  current = str.charAt(i);
-            
-            String newsub = str.substring(0, i) + str.substring(i+1);
-
-            calculate(newstr, new + current);
-            
+        if (str.length() == 0) {
+            System.out.println(prefix);
+            return;
         }
-    
 
+        for (int i = 0; i < str.length(); i++) {
+            char curr = str.charAt(i);
+            String newSub = str.substring(0, i) + str.substring(i + 1);
+            calculate(newSub, prefix + curr);
+        }
     }
 
-    public static void main(String[] args){
-
-
-    System.out.println("print all the combinaations of a string (permutations)");
-    // total number of permutations is  n factorial 
-    calculate("abc", "");
+    public static void main(String[] args) {
+        System.out.println("Print all the combinations of a string (permutations)");
+        // Total number of permutations is n factorial
+        // time complexity will be total number of permutations = n factorial 
+        calculate("abc", "");
+    }
 }
