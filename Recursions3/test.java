@@ -1,7 +1,7 @@
 public class test{
     public static void main(String[]args){
         
-        String str = "abc";
+        String str = "ab";
 
      
         for(int i= 0 ; i < str.length(); i++){
