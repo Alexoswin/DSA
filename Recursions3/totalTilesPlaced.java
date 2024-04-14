@@ -3,7 +3,7 @@ public class  totalTilesPlaced{
     public static int calculate(int n , int m){
 
         if(n ==m){
-            return 2;
+            return m;
 
         }
         if(n<m){
