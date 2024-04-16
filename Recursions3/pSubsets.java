@@ -20,7 +20,7 @@ public class pSubsets{
         subsets.add(n);
         calculate(n-1, subsets);
 
-        subsets.remove(subsets.size()-1);
+        subsets.remove(subsets.size()-1); // -1 because if the array is (1,2,3) size =3  and we want to remove the last element 3 so the index position of 3 is  size -1  = 3-1 
         calculate(n-1,subsets);
     }
 
