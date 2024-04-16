@@ -24,3 +24,4 @@ public class subsequence_of_string {
        calculate(str,0,"");
     }
 }
+// time complexitx = 2^n
