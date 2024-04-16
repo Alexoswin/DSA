@@ -2,7 +2,7 @@ public class  pairsSingle{
 
     public static int calculate(int n){
 
-            if(n ==1){
+            if(n <=1){
                 return 1;
             }
             
@@ -18,7 +18,7 @@ public static void main(String[]args){
 
 
     System.out.println("pairs and single combinations");
-    calculate(4);
+   System.out.println( calculate(4));
 }
     
 }
