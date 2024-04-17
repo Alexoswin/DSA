@@ -26,3 +26,4 @@ public class Backtracking{
         calculate(str,"",0);
     }
 }
+// time complexity = n*n! 
