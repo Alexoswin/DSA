@@ -55,7 +55,7 @@ public class nQueens {
             if (isSafe(row, column, board)) {
                 board[row][column] = 'Q';
                 calculate(board, allBoards, column + 1);
-                board[row][column] = ' . ';
+                board[row][column] = '.';
             }
         }
     }
