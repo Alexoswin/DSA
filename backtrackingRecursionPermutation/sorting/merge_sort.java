@@ -1,6 +1,6 @@
 import java.util.Arrays;
 public class merge_sort {
-
+    // time complexity n log n 
     public static void conquer(int arr[], int si , int mid , int ei){
         int  merge[] = new int[ei -si +1];
         int idx1 = si;
