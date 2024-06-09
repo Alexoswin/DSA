@@ -43,7 +43,7 @@ public class quick_sort {
     
 
     public static void main(String []args){
-        int[] arr = {2,23,1,54,1,2,43,7,6,9,23};
+        int[] arr = {2,23,1,54,44,1,2,43,7,6,9,23};
         int n = arr.length; 
 
         sort(arr, 0, n-1);
