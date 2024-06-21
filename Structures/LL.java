@@ -66,6 +66,8 @@ Node head;
         list.addFirst("abc");
         list.addFirst("Def");
         list.addLast("xyz");
+        list.addFirst("123");
+        list.addLast("hhh");
         list.printList();
 
 
