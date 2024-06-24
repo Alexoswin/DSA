@@ -21,6 +21,7 @@ Node head;
             head = newNode;
             return;
         }
+        // pointing the new node to the head  and then making the new node  head 
         newNode.next = head;
         head = newNode;
     }
@@ -66,7 +67,7 @@ Node head;
         list.addFirst("abc");
         list.addFirst("Def");
         list.addLast("xyz");
-        list.addFirst("123");
+        list.addFirst("xxx");
         list.addLast("hhh");
         list.printList();
 
