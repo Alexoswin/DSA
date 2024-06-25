@@ -12,7 +12,7 @@ Node head;
         }
 
     }
-// ADD  - FIRST AND LAST 
+// ADD  - FIRST AND LAST  
     public void addFirst(String data){
         Node newNode  = new Node(data);
 
@@ -60,6 +60,33 @@ Node head;
         
      }
 
+     public void delete_first(){
+        if(head == null){
+            System.out.println("empty list");
+            return;
+        }
+        head = head.next;
+     }
+     public void delete_last(){
+        if(head == null){
+            System.out.println("empty list");
+        }
+        if(head.next == null){
+            head = null;
+            return;
+        }
+            Node secondlast = head;
+            Node last = head.next;
+
+            while(last.next != null){
+                last = last.next;
+                secondlast = secondlast.next;
+            }
+            secondlast.next =null;
+                
+   
+     }
+
     public static void  main (String args[]){
 
         LL list = new LL();
@@ -69,7 +96,12 @@ Node head;
         list.addLast("xyz");
         list.addFirst("xxx");
         list.addLast("hhh");
+        list.addLast("Second_last_node");
+        list.addLast("last");
+        list.delete_first();
+        list.delete_last();
         list.printList();
+        
 
 
 
