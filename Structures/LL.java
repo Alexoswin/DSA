@@ -88,6 +88,23 @@ Node head;
    
      }
 
+     public void delete_form_between(String data){
+
+        if(head == null){
+            System.out.println("empty list");
+        }
+        if(head.next == null){
+            head = null;
+            return;
+        }
+        Node  cu = head;
+        while (cu.next.data != data) {
+            cu = cu.next;
+            
+        }
+        cu.next = cu.next.next;
+     }
+
     public static void  main (String args[]){
 
         LL list = new LL();
@@ -101,6 +118,12 @@ Node head;
         list.addLast("last");
         list.delete_first();
         list.delete_last();
+        list.printList();
+        System.out.println();
+        list.addFirst("aadsad");
+        list.addFirst("ammim");
+        list.addFirst("knknknk");
+        list.delete_form_between("aadsad");
         list.printList();
             
 
