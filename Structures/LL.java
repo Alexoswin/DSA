@@ -75,14 +75,15 @@ Node head;
             head = null;
             return;
         }
-            Node secondlast = head;
+        
             Node last = head.next;
 
-            while(last.next != null){
+            
+            while(last.next.next != null){
                 last = last.next;
-                secondlast = secondlast.next;
+                
             }
-            secondlast.next =null;
+            last.next =null;
                 
    
      }
@@ -101,7 +102,7 @@ Node head;
         list.delete_first();
         list.delete_last();
         list.printList();
-        
+            
 
 
 
