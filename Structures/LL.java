@@ -1,6 +1,13 @@
+import java.util.List;
+
 class LL{
 
 Node head;
+private int size ;
+
+LL(){
+    this.size = 0;
+}
     class Node {
         String data;
         Node next;
@@ -9,6 +16,7 @@ Node head;
 
             this.data = data;
             this.next = null;
+            size ++;
         }
 
     }
@@ -19,7 +27,9 @@ Node head;
         if(head == null){
 
             head = newNode;
+            
             return;
+            
         }
         // pointing the new node to the head  and then making the new node  head 
         newNode.next = head;
@@ -87,11 +97,13 @@ Node head;
             return;
         }
         head = head.next;
+        size--;
      }
      public void delete_last(){
         if(head == null){
             System.out.println("empty list");
         }
+        size--;
         if(head.next == null){
             head = null;
             return;
@@ -105,15 +117,17 @@ Node head;
                 
             }
             last.next =null;
+            
                 
    
      }
 
      public void delete_form_between(String data){
-
+        
         if(head == null){
             System.out.println("empty list");
         }
+        size--;
         if(head.next == null){
             head = null;
             return;
@@ -124,6 +138,10 @@ Node head;
             
         }
         cu.next = cu.next.next;
+        
+     }
+     public int getsize(){
+        return size;
      }
 
     public static void  main (String args[]){
@@ -148,6 +166,8 @@ Node head;
         list.add_between("aaa", "abc");
         list.add_between("last","Second_last_node");
         list.printList();
+        System.out.println();
+        System.out.println(list.getsize());
             
 
 
