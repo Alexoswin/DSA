@@ -60,6 +60,27 @@ Node head;
         
      }
 
+     public void add_between(String data , String before){
+
+        Node bef = head;
+        Node newNode = new Node(data);
+        
+        while (bef.data != before)  {
+            bef = bef.next;
+            
+        }
+        if(bef.next == null){
+            bef.next = newNode;
+            return;
+        }
+        newNode.next = bef.next;
+        bef.next = newNode;
+
+        
+
+        
+     }
+
      public void delete_first(){
         if(head == null){
             System.out.println("empty list");
@@ -124,6 +145,8 @@ Node head;
         list.addFirst("ammim");
         list.addFirst("knknknk");
         list.delete_form_between("aadsad");
+        list.add_between("aaa", "abc");
+        list.add_between("last","Second_last_node");
         list.printList();
             
 
