@@ -10,6 +10,9 @@ public class linlist {
         List.addFirst("sda");
         System.out.println(List.size());
         System.out.println(List.get(2));
+        List.removeFirst();
+        List.remove(0);
+        
         
 
         //Array list 
@@ -25,5 +28,5 @@ public class linlist {
 
 
 
-    }
+    }   
 }
