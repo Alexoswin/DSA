@@ -171,6 +171,17 @@ LL(){
        
      }
 
+     public Node recursive_reverse(Node head){
+            if(head.next == null|| head == null){
+                return head;
+            }
+        Node newhead= recursive_reverse(head.next);
+
+        head.next.next = head;
+        head.next = null;
+        return  newhead;
+     }
+
     public static void  main (String args[]){
 
         LL list = new LL();
@@ -198,9 +209,19 @@ LL(){
         //reverse 
         list.reverse();
         list.printList();
-            
+        list.recursive_reverse(list.head);
+        System.out.println();
+        
+        ///
 
 
+        LL ll = new LL();
+        ll.addFirst("dsa");
+        ll.addFirst("dasd");
+        ll.addFirst("nnj");
+        
+       ll.head = ll.recursive_reverse(ll.head);
+        ll.printList();
 
     }
   
