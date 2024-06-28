@@ -195,7 +195,7 @@ LL(){
         list.printList();
         System.out.println();
         System.out.println(list.getsize());
-
+        //reverse 
         list.reverse();
         list.printList();
             
