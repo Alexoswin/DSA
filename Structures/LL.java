@@ -1,4 +1,4 @@
-import java.util.List;
+
 
 class LL{
 
@@ -144,6 +144,33 @@ LL(){
         return size;
      }
 
+     public void reverse(){
+
+        if(head == null || head.next == null ){
+
+            return;
+        }
+        
+        Node prev = head;
+        Node cur = head.next;
+        while(cur != null){
+            Node nextnode = cur.next;
+            cur.next = prev;
+        
+            prev = cur;
+            cur = nextnode;
+
+
+
+        }
+        head.next = null;
+        head = prev;
+
+
+
+       
+     }
+
     public static void  main (String args[]){
 
         LL list = new LL();
@@ -168,6 +195,9 @@ LL(){
         list.printList();
         System.out.println();
         System.out.println(list.getsize());
+
+        list.reverse();
+        list.printList();
             
 
 
