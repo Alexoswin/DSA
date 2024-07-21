@@ -1,92 +1,73 @@
-public class circular{
+public class circular {
 
-public static class circularQueue{
+    static class CQueue {
+        static int size;
+        static int front = -1;
+        static int rear = -1;
+        static int[] arr;
 
- static  int arr[];
- static int front = -1;
- static int rear = -1 ;
-static int size;
+        CQueue(int size) {
+            this.size = size;
+            arr = new int[size];
+        }
 
+        public static boolean isEmpty() {
+            return front == -1 && rear == -1;
+        }
 
+        public static boolean isFull() {
+            return (rear + 1) % size == front;
+        }
 
-// constructor 
+        public static void push(int data) {
+            if (isFull()) {
+                System.out.println("Queue is full");
+                return;
+            }
+            if (isEmpty()) {
+                front = 0;
+            }
+            rear = (rear + 1) % size;
+            arr[rear] = data;
+        }
 
-circularQueue(int size){
+        public static int pop() {
+            if (isEmpty()) {
+                System.out.println("Queue is empty");
+                return -1;
+            }
+            int data = arr[front];
+            if (front == rear) {
+                // Queue is now empty
+                front = -1;
+                rear = -1;
+            } else {
+                front = (front + 1) % size;
+            }
+            return data;
+        }
 
-    arr = new int [size];
-    this.size = size;
-  
-}
-
-
-public static boolean  isEmpty(){
-
-   return rear ==-1 && front ==-1;
-
-}
-
-public static void push(int data){
-   if(rear%size +1 == front % size || rear == size && front == -1){
-
-    System.out.println("queue is full");
-    
-   }
-   else{
-    rear = (rear +1)% size;
-    arr[rear] = data;
-
-
-   }
-
-
-
-}
-
-
-public static int pull(){
-
-
-    if(isEmpty()){
-        return -1;
+        public static int peek() {
+            if (isEmpty()) {
+                System.out.println("Queue is empty");
+                return -1;
+            }
+            return arr[front];
+        }
     }
-    int temp = arr[front];
-    front = (front +1) % size;
-    return temp;
-}
 
+    public static void main(String[] args) {
+        System.out.println("Circular queue using array");
 
-public static int peek(){
+        CQueue q = new CQueue(4);
 
+        q.push(1);
+        q.push(2);
+        q.push(3);
 
-    if(isEmpty()){
-        return -1;
-    }
-    return arr[front];
-}
-
-
-
-}
-
-public static void main(String [] args){
-
-
-    System.out.println("circular queue using array");
-     circularQueue  q = new circularQueue(5);
-
-     q.push(1);
-     q.push(2);
-     q.push(3);
-     q.push(4);
-
-
-     while(!q.isEmpty()){
-
+        while (!q.isEmpty()) {
             System.out.println(q.peek());
-            q.pull();
-
-     }
-
-
-}
+            q.pop();
+        }
+    }
 }
