@@ -11,49 +11,87 @@ public class circular {
             arr = new int[size];
         }
 
-        public static boolean isEmpty() {
-            return front == -1 && rear == -1;
-        }
 
-        public static boolean isFull() {
-            return (rear + 1) % size == front;
-        }
+        public static boolean isEmpty(){
 
-        public static void push(int data) {
-            if (isFull()) {
-                System.out.println("Queue is full");
-                return;
+            if(front == -1 && rear == -1  ){
+
+             return true ;
             }
-            if (isEmpty()) {
-                front = 0;
+            else{
+
+                return false ;
             }
-            rear = (rear + 1) % size;
-            arr[rear] = data;
+            
         }
 
-        public static int pop() {
-            if (isEmpty()) {
-                System.out.println("Queue is empty");
+        public static boolean isFull(){
+
+
+            if((rear +1)% size == front){
+                return true;
+            }
+            else{
+                return false;
+            }
+        }
+
+
+        public static int peek(){
+
+            if(isEmpty()){
+
                 return -1;
             }
-            int data = arr[front];
-            if (front == rear) {
-                // Queue is now empty
-                front = -1;
-                rear = -1;
-            } else {
-                front = (front + 1) % size;
+            else{
+                return arr[front];
+
             }
-            return data;
         }
 
-        public static int peek() {
-            if (isEmpty()) {
-                System.out.println("Queue is empty");
+        public static void push(int data){
+                if(isFull()){
+                    System.out.println(" queue is full");
+                }
+
+                if(front == -1){
+                    front = 0;
+                    
+                    
+                }
+
+                
+                    rear = (rear+1)% size;
+                    arr[rear] = data;
+                
+
+
+        }
+
+        public static int pop(){
+            if(isEmpty()){
+                System.out.println(" empty queue");
                 return -1;
             }
-            return arr[front];
+
+
+            int temp = arr[front];
+            if(front == rear){
+                rear = front = -1;
+            }
+            else{
+            front = (front +1)% size;
+
+            }
+            return temp;
         }
+        
+           
+        
+
+        
+
+        
     }
 
     public static void main(String[] args) {
@@ -64,10 +102,14 @@ public class circular {
         q.push(1);
         q.push(2);
         q.push(3);
+        q.push(4);
+       
+       
 
-        while (!q.isEmpty()) {
-            System.out.println(q.peek());
-            q.pop();
-        }
+                   while(!q.isEmpty()){
+
+                        System.out.println(q.peek());
+                        q.pop();
+                   }
     }
 }
