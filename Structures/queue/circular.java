@@ -77,6 +77,9 @@ public class circular {
 
             int temp = arr[front];
             if(front == rear){
+                // if therer is one element and poping it will empty 
+                // will make the queue qmpty 
+                // so we need to set their values as -1 again
                 rear = front = -1;
             }
             else{
