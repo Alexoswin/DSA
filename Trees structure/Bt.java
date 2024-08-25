@@ -121,6 +121,28 @@
         }
 
 
+        public static int SumNodes(Node root){
+
+            
+            if(root == null ){
+                return 0;
+            }
+           
+
+
+            return SumNodes(root.left)+ SumNodes(root.right) + root.data ;
+        }
+
+
+        public static int treeHeight(Node root){
+
+            if(root == null ){
+                return 0;
+            }
+
+            return Math.max(treeHeight(root.left)+1 , treeHeight(root.right)+1);
+        }
+            
 
     }
      public static void main (String [] args ){
@@ -157,5 +179,20 @@
         System.out.println(" num of nodes ");
 
        System.out.println( tree.countNodes(root));
+
+
+       
+       System.out.println();
+       System.out.println(" sum of nodes  ");
+
+       
+       System.out.println(tree.SumNodes(root));
+
+
+       
+       System.out.println();
+       System.out.println(" height of the tree ");
+
+       System.out.println(tree.treeHeight(root));
      }
 }
