@@ -1,3 +1,4 @@
+  import java.util.*;
  class Bt {
 
     static class Node{
@@ -66,6 +67,48 @@
             System.out.println(root.data);
         }
 
+        // breath first search methoad 
+        // level order traversal 
+        public static void breathFirst(Node root ){
+
+            if(root == null){
+                System.out.println("empty tree");
+                return;
+            }
+            Queue<Node> q = new LinkedList<>();
+
+            q.add(root);
+            q.add(null);
+
+            while(! q.isEmpty()){
+                Node curr = q.remove();
+
+                if(curr == null){
+                    System.out.println();
+
+                    if(q.isEmpty()){
+                        break;
+                    }
+                    else{
+                        q.add(null);
+                    }
+                }
+                else{
+                    System.out.println(curr.data + " ");
+
+                    if(curr.left != null){
+                        q.add(curr.left);
+                        
+                    }
+                    if(curr.right != null ){
+                        q.add(curr.right);
+                    }
+                }
+            }
+
+
+        }
+
 
 
     }
@@ -90,6 +133,12 @@
 
 
         tree.postorder(root);
+
+
+        System.out.println();
+        System.out.println();
+
+        tree.breathFirst(root);
 
      }
 }
