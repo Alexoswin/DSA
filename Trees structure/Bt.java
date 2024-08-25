@@ -109,6 +109,17 @@
 
         }
 
+        public static int countNodes(Node root){
+
+            if(root == null ){
+                return 0;
+            }
+           
+
+
+            return countNodes(root.left)+ countNodes(root.right) +1 ;
+        }
+
 
 
     }
@@ -139,6 +150,12 @@
         System.out.println();
 
         tree.breathFirst(root);
+        
 
+        
+        System.out.println();
+        System.out.println(" num of nodes ");
+
+       System.out.println( tree.countNodes(root));
      }
 }
