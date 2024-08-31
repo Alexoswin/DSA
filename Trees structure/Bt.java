@@ -140,9 +140,21 @@
                 return 0;
             }
 
-            return Math.max(treeHeight(root.left)+1 , treeHeight(root.right)+1);
+            return Math.max(treeHeight(root.left) , treeHeight(root.right)+1);
         }
+           
+        public static int Diamater(Node root){
+                if(root == null){
+                    return 0;
+                }
+            int d1 = Diamater(root.left);
+            int d2 = Diamater(root.right);
+            int d3 = treeHeight(root.left)+ treeHeight(root.right) +1;
             
+            return Math.max(d3, Math.max(d3, d2));
+            
+        }
+
 
     }
      public static void main (String [] args ){
@@ -194,5 +206,12 @@
        System.out.println(" height of the tree ");
 
        System.out.println(tree.treeHeight(root));
+
+    
+       System.out.println();
+       System.out.println(" Diamater ");
+
+       System.out.println(tree.Diamater(root));
+
      }
 }
