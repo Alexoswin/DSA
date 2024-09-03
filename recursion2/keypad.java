@@ -1,4 +1,4 @@
-public class Keypad{
+ class Keypad{
 
     public static String[] keypad = {"." , "abc", "def", "ghi" , "jkl" , "mno" , "pqrs" ,"tu" ,"vwx", "yz" };
 
