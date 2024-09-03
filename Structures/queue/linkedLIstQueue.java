@@ -1,5 +1,5 @@
 
-public class linkedListQueue{
+class linkedListQueue{
 
         
        static class Node{
