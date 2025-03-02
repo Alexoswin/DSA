@@ -40,24 +40,44 @@ public class  graph{
     }
 
 
+        public static void Bfs(ArrayList<edge> graph[]){
+            
+
+         boolean visit[] = new boolean[graph.length];
+         Queue<Integer> q = new LinkedList<Integer>();
+         q.add(0);
+
+         while(! q.isEmpty()){
+
+
+
+            int curr = q.remove();
+            if(visit[curr]== false){
+                System.out.println(curr);
+
+                visit[curr]  =true;
+
+                for(int i = 0 ; i< graph[curr].size(); i++){
+
+                  edge e = graph[curr].get(i);
+                  q.add(e.dest);
+                    
+                }
+            }
+         }
+
+        }
+
     public static void main (String [] args){
         System.out.println("Graphs using adjuscent list");
 
         ArrayList<edge> graph[] = new ArrayList[4];
         createGraph(graph);
 
-        // print neighbours of each node 
-        for(int i = 0 ; i< graph.length ; i++){
-         
         
-            System.out.print("node: " + i + ": ");
-            
-            for(int j = 0 ; j< graph[i].size(); j++){
-
-                System.out.println("src: " + graph[i].get(j).src + " -> " + "Dest: " + graph[i].get(j).dest);
-            }
-            System.out.println();
-        }
+        Bfs(graph);
 
     }
+
+
 }
